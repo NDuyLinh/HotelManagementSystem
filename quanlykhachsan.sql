@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `UserName` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `PasssWord` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Active` bit(1) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `account` (
 --
 
 CREATE TABLE `bill` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `IDRent` int(11) DEFAULT NULL,
   `IDService` int(11) DEFAULT NULL,
   `IDEmployee` int(11) DEFAULT NULL,
@@ -58,7 +58,7 @@ CREATE TABLE `bill` (
 --
 
 CREATE TABLE `customer` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CMND` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sex` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -74,13 +74,13 @@ CREATE TABLE `customer` (
 --
 
 CREATE TABLE `employee` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `CMND` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sex` varchar(10) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Birthday` date DEFAULT NULL,
   `Phone` varchar(11) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `IDAccount` int(11) DEFAULT NULL,
+  `IDAccount` int(11) DEFAULT NULL ,
   `IDPosition` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -91,7 +91,7 @@ CREATE TABLE `employee` (
 --
 
 CREATE TABLE `positions` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NamePosition` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
@@ -102,7 +102,7 @@ CREATE TABLE `positions` (
 --
 
 CREATE TABLE `rent` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `IDCustomer` int(11) DEFAULT NULL,
   `IDRoom` int(11) DEFAULT NULL,
   `DateIN` datetime DEFAULT NULL,
@@ -116,7 +116,7 @@ CREATE TABLE `rent` (
 --
 
 CREATE TABLE `rooms` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `TypeRoom` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Price` double DEFAULT NULL,
   `Descriptionn` varchar(500) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -130,7 +130,7 @@ CREATE TABLE `rooms` (
 --
 
 CREATE TABLE `services` (
-  `ID` int(11) NOT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   `NameServices` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `Price` double DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
